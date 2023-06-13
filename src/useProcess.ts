@@ -24,10 +24,12 @@ export function useProcess<ArgsType, StateType>(procFn : ProcessFn<ArgsType, Sta
     }
 
     let spawnProc: Process<ArgsType, StateType> | null = null;
-    if (!cachedProc && !lazy) {
+    const registeredProc: Process<ArgsType, StateType> = (procReg[procName] as Process<ArgsType, StateType>);
+    if (!registeredProc && !lazy) {
       spawnProc = spawn<ArgsType, StateType>(procFn, procName)(refArgs.current);
     };
-    const proc = cachedProc || spawnProc;
+
+    const proc = registeredProc || spawnProc;
     const un = proc && proc.subscribe(update);
 
     if (proc) {

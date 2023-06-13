@@ -38,10 +38,10 @@ loose-envify@^1.1.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-posipaki@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/posipaki/-/posipaki-0.3.2.tgz#badc375ef9483bffdcbb3e21f8504bcf67c181f4"
-  integrity sha512-CO4jipQlN5mKglx+mL24FD/mbTfHhPlNTqmxxxbLqjP6Y7AX4cONxwnGLtijZ4m8wnTF55HQC7/9ibVikDkGfQ==
+posipaki@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/posipaki/-/posipaki-0.3.3.tgz#f1464ccf14200b3a13447a6eff213ca6a45c8c86"
+  integrity sha512-8cHclrSmduUXBSbx1o1Q4vINhSAGd+5Y9Ir4mRVBrwxj09tbH1VLgsf0MhG2+Rro5tS+wWSa30tNvi7GJMa0UA==
 
 react@^18.2.0:
   version "18.2.0"
