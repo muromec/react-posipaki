@@ -5,6 +5,7 @@ type Props = {
   url: URL,
   id: string,
   assumeLoading?: boolean,
+  lazy?: boolean,
 };
 
 type Result<T> = {
@@ -12,8 +13,8 @@ type Result<T> = {
   items?: T,
 };
 
-export function useResource<DataType>({ url, id, assumeLoading = true } : Props) : Result<DataType> {
-  const { pstate } = useProcess<FetchArgs, FetchState<DataType>>(xfetch, id, { url });
+export function useResource<DataType>({ url, id, lazy = false, assumeLoading = true } : Props) : Result<DataType> {
+  const { pstate } = useProcess<FetchArgs, FetchState<DataType>>(xfetch, id, { url }, lazy);
 
   if (!pstate) {
     return { isLoading: assumeLoading };
