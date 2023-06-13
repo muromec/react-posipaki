@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "react-posipaki",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -10,7 +10,8 @@
   "files": [
     "dist/*js",
     "dist/*map",
-    "dist/*d.ts"
+    "dist/*d.ts",
+    "src/*ts"
   ],
   "dependencies": {
     "@types/react": "^18.0.0",
