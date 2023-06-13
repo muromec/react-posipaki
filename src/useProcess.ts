@@ -24,19 +24,19 @@ export function useProcess<ArgsType, StateType>(procFn : ProcessFn<ArgsType, Sta
     let un = proc.subscribe(update);
     procReg[procName] = proc as Process<unknown, unknown>;
 
-    proc.wait().then(() => {
-      delete procReg[procName];
-    });
-
     refProc.current = proc;
     return () => {
       if (un) {
         un();
       }
-      proc.send({type: 'STOP'});
+      requestIdleCallback(() => {
+        if (!proc.isListenedTo) {
+          proc.send({type: 'STOP'});
+          delete procReg[procName];
+        }
+      });
     };
   }, [procFn, procName, refArgs, procReg]);
   return { pstate, send };
-
 }
 
