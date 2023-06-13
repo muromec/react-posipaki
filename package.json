@@ -1,15 +1,21 @@
 {
   "type": "module",
-  "name": "react-pspki",
-  "version": "0.2.1",
+  "name": "react-posipaki",
+  "version": "0.2.2",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc"
   },
+  "files": [
+    "dist/*js",
+    "dist/*map",
+    "dist/*d.ts"
+  ],
   "dependencies": {
     "@types/react": "^18.0.0",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "posipaki": "^0.3.2"
   },
   "devDependencies": {
     "typescript": "^4.4.3"

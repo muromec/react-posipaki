@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { Process } from 'pspki';
+import { Process } from 'posipaki';
 
 type Reg = {
   [key: string]: Process<unknown, unknown>;

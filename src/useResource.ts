@@ -1,4 +1,4 @@
-import { xfetch, FetchState, FetchArgs } from 'pspki/dist/xfetch.js';
+import { xfetch, FetchState, FetchArgs } from 'posipaki/dist/xfetch.js';
 import { useProcess } from './useProcess.js';
 
 type Props = {

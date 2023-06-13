@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { spawn, Process, Message, ProcessFn } from 'pspki';
+import { spawn, Process, Message, ProcessFn } from 'posipaki';
 import { useProcReg } from './registry.js';
 
 export function useProcess<ArgsType, StateType>(procFn : ProcessFn<ArgsType, StateType>, procName: string, procArgs: ArgsType, lazy? : boolean) {
