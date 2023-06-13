@@ -17,7 +17,7 @@ export function useResource<DataType>({ url, id, lazy = false, assumeLoading = t
   const { pstate } = useProcess<FetchArgs, FetchState<DataType>>(xfetch, id, { url }, lazy);
 
   if (!pstate) {
-    return { isLoading: assumeLoading };
+    return { isLoading: assumeLoading && !lazy };
   }
   if (!pstate.data) {
     return { isLoading: pstate.code === 'loading' };
