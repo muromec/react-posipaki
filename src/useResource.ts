@@ -14,7 +14,7 @@ type Result<T> = {
 };
 
 export function useResource<DataType>({ url, id, lazy = false, assumeLoading = true } : Props) : Result<DataType> {
-  const { pstate } = useProcess<FetchArgs, FetchState<DataType>>(xfetch, id, { url }, lazy);
+  const { pstate } = useProcess<FetchArgs<DataType>, FetchState<DataType>>(xfetch, id, { url }, lazy);
 
   if (!pstate) {
     return { isLoading: assumeLoading && !lazy };
