@@ -1,4 +1,5 @@
-import { xfetch, FetchState, FetchArgs } from 'posipaki/dist/xfetch.js';
+import { Message, ExitMessage } from 'posipaki';
+import { xfetch, FetchState, FetchArgs, FetchMessage } from 'posipaki/dist/xfetch.js';
 import { useProcess } from './useProcess.js';
 
 type Props = {
@@ -14,7 +15,7 @@ type Result<T> = {
 };
 
 export function useResource<DataType>({ url, id, lazy = false, assumeLoading = true } : Props) : Result<DataType> {
-  const { pstate } = useProcess<FetchArgs<DataType>, FetchState<DataType>>(xfetch, id, { url }, lazy);
+  const { pstate } = useProcess<FetchArgs<DataType>, FetchState<DataType>, FetchMessage<DataType>, FetchMessage<DataType>>(xfetch, id, { url }, lazy);
 
   if (!pstate) {
     return { isLoading: assumeLoading && !lazy };
