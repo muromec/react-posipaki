@@ -35,6 +35,7 @@ export function useProcess<ArgsType, StateType, InMessage extends Message, OutMe
     if (proc) {
       procReg[procName] = (proc as unknown) as Process<unknown, unknown, Message, ExitMessage>;
       refProc.current = proc;
+      setPstate({...proc.state as StateType});
     }
 
     return () => {
