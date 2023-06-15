@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "outDir": "./dist",
+    "rootDirs": ["./src"],
     "target": "ES2015",
     "module": "ESNext",
     "declaration": true,
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "sourceMap": true,
     "strict": true
-  }
+  },
+  "include": ["src"]
 }

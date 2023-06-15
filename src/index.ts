@@ -1,6 +1,6 @@
-import { useProcReg, ProcessContext } from './registry.js';
-import { useProcess } from './useProcess.js';
-import { useResource } from './useResource.js';
+import { useProcReg, ProcessContext } from './registry';
+import { useProcess } from './useProcess';
+import { useResource } from './useResource';
 
 const Registry = ProcessContext.Provider;
 

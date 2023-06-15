@@ -1,6 +1,6 @@
 import { Message, ExitMessage } from 'posipaki';
 import { xfetch, FetchState, FetchArgs, FetchMessage } from 'posipaki/dist/xfetch.js';
-import { useProcess } from './useProcess.js';
+import { useProcess } from './useProcess';
 
 type Props = {
   url: URL,
@@ -11,7 +11,7 @@ type Props = {
 
 type Result<T> = {
   isLoading: boolean,
-  items?: T,
+  res?: T,
 };
 
 export function useResource<DataType>({ url, id, lazy = false, assumeLoading = true } : Props) : Result<DataType> {
@@ -24,5 +24,5 @@ export function useResource<DataType>({ url, id, lazy = false, assumeLoading = t
     return { isLoading: pstate.code === 'loading' };
   }
 
-  return { items: pstate.data, isLoading: pstate.code === 'loading' };
+  return { res: pstate.data, isLoading: pstate.code === 'loading' };
 }
